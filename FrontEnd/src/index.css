@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  --button-bg: #01a0ac;
+  --button-bg-hover: #028f9b;
+  --bg: #01a0ac;
+  --main-bg: #c7d8d8;
+}
+
+@layer base {
+}
