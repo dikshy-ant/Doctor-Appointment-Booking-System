@@ -2,36 +2,46 @@ import React from "react";
 
 const StatsCounter = () => {
   return (
-    <section className="bg-[var(--bg)] transition-all duration-300 hover:scale-105  p-16 ">
-      <div className="m-auto">
-        <div className="w-full text-center ">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4">
+    <section className="bg-[var(--bg)] transition-all duration-300 hover:scale-105 p-10 md:p-16">
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="w-full text-center mb-10">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-4">
             Why Choose Us?
           </h1>
-          <p className="text-xl md:text-2xl text-white-700 max-w-3xl mx-auto mb-6">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
             Stats By Numbers
           </p>
         </div>
 
-        <div className="w-full flex justify-center align-middle gap-16 text-white">
+        {/* Stats */}
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-white text-center">
           <div>
-            <h1 className="text-5xl md:text-5xl font-bold text-center">95%</h1>
-            <p className="mt-2 text-lg">Prescription accuracy rate</p>
+            <h1 className="text-4xl sm:text-5xl font-bold">95%</h1>
+            <p className="mt-2 text-base sm:text-lg">
+              Prescription accuracy rate
+            </p>
           </div>
 
           <div>
-            <h1 className="text-5xl md:text-5xl font-bold text-center">10k+</h1>
-            <p className="mt-2 text-lg">Prescriptions filled monthly</p>
+            <h1 className="text-4xl sm:text-5xl font-bold">10k+</h1>
+            <p className="mt-2 text-base sm:text-lg">
+              Prescriptions filled monthly
+            </p>
           </div>
 
           <div>
-            <h1 className="text-5xl md:text-5xl font-bold text-center">500+</h1>
-            <p className="mt-2 text-lg">Trusted partner pharmacies</p>
+            <h1 className="text-4xl sm:text-5xl font-bold">500+</h1>
+            <p className="mt-2 text-base sm:text-lg">
+              Trusted partner pharmacies
+            </p>
           </div>
 
           <div>
-            <h1 className="text-5xl md:text-5xl font-bold text-center">24/7</h1>
-            <p className="mt-2 text-lg">Customer support available</p>
+            <h1 className="text-4xl sm:text-5xl font-bold">24/7</h1>
+            <p className="mt-2 text-base sm:text-lg">
+              Customer support available
+            </p>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import Doctors from "../Components/Doctors";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 const TopDoctors = () => {
   const settings = {
@@ -18,6 +19,24 @@ const TopDoctors = () => {
     cssEase: "ease-in-out",
     swipeToSlide: true,
     touchMove: true,
+    responsive: [
+      {
+        breakpoint: 1024, // <= 1024px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768, // <= 768px (tablet)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -31,9 +50,11 @@ const TopDoctors = () => {
           exceptional care and personalized treatment.
         </p>
         <div className="flex justify-center">
-          <p className="text-xl font-semibold text-[var(--button-bg)] cursor-pointer transition-colors duration-300">
-            See More
-          </p>
+          <Link to="/doctors">
+            <p className="text-xl font-semibold text-[var(--button-bg)] cursor-pointer transition-colors duration-300">
+              See More
+            </p>
+          </Link>
         </div>
       </div>
 

@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
 :root {
+  /* Global color variables */
+  --color-page-bg: #d8ecec;
+  --color-surface: #f2f2f2;
+  --color-panel: #f9f9f9;
+  --text-strong: #111827;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --text-inverse: #ffffff;
+  --text-success: #16a34a;
+  --text-danger: #ef4444;
+  --text-accent: #0284c7;
   --button-bg: #01a0ac;
   --button-bg-hover: #028f9b;
   --bg: #01a0ac;
@@ -8,4 +20,8 @@
 }
 
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }

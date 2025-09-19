@@ -3,7 +3,7 @@ import customerData from "../CustomerData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from "react-router-dom";
 const Testimonials = () => {
   const settings = {
     dots: false,
@@ -17,20 +17,40 @@ const Testimonials = () => {
     cssEase: "ease-in-out",
     swipeToSlide: true,
     touchMove: true,
+    responsive: [
+      {
+        breakpoint: 1024, // <= 1024px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768, // <= 768px (tablet)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className="w-full flex flex-col items-start gap-9 my-7 text-gray-800 px-4 md:px-10">
       <div className="w-full text-center transition-all duration-300 hover:scale-105">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-[var(--text-strong)] mb-4">
           Don't Believe Us? Believe Them
         </h1>
-        <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-6">
+        <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-6">
           What Our Customers Say About Us, Their Words Not Ours
         </p>
         <div className="flex justify-center">
-          <p className="text-xl font-semibold text-[var(--button-bg)] cursor-pointer transition-colors duration-300">
-            See More
-          </p>
+          <Link to="/doctors">
+            <p className="text-xl font-semibold text-[var(--button-bg)] cursor-pointer transition-colors duration-300">
+              See More
+            </p>
+          </Link>
         </div>
       </div>
 
@@ -40,7 +60,7 @@ const Testimonials = () => {
             <div className="px-2">
               <div
                 key={index}
-                className="bg-[#f2f2f2] rounded-2xl h-103 p-6 transition-all duration-300 hover:scale-105 flex flex-col items-center"
+                className="bg-[var(--color-surface)] rounded-2xl h-103 p-6 transition-all duration-300 hover:scale-105 flex flex-col items-center"
               >
                 <div className="p-3 rounded-full text-blue-700 flex items-center justify-center mb-4">
                   <img
@@ -52,21 +72,21 @@ const Testimonials = () => {
 
                 {/* Text content container */}
                 <div className="flex flex-col items-center gap-3 text-center">
-                  <div className="flex text-blue-600 justify-center">
+                <div className="flex text-[var(--text-accent)] justify-center">
                     <span className="text-xl">★</span>
                     <span className="text-xl">★</span>
                     <span className="text-xl">★</span>
                     <span className="text-xl">★</span>
                     <span className="text-xl">★</span>
                   </div>
-                  <h2 className="text-xl font-bold text-gray-800">
+                <h2 className="text-xl font-bold text-[var(--text-primary)]">
                     {customer.title}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-[var(--text-muted)] leading-relaxed text-sm">
                     {customer.description}
                   </p>
 
-                  <h2 className="text-xl font-semi-bold text-gray-900">
+                <h2 className="text-xl font-semi-bold text-[var(--text-strong)]">
                     {customer.name}
                   </h2>
                 </div>

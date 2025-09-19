@@ -3,6 +3,7 @@ import NewsData from "../NewsData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 const LatestNews = () => {
   const settings = {
@@ -17,6 +18,33 @@ const LatestNews = () => {
     cssEase: "ease-in-out",
     swipeToSlide: true,
     touchMove: true,
+    responsive: [
+      {
+        breakpoint: 1200, // <= 1024px
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024, // <= 1024px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768, // <= 768px (tablet)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -29,9 +57,11 @@ const LatestNews = () => {
           View the Latest Medical News Around the World
         </p>
         <div className="flex justify-center">
-          <p className="text-xl font-semibold text-[var(--button-bg)] cursor-pointer transition-colors duration-300">
-            See More
-          </p>
+          <Link to="/doctors">
+            <p className="text-xl font-semibold text-[var(--button-bg)] cursor-pointer transition-colors duration-300">
+              See More
+            </p>
+          </Link>
         </div>
       </div>
 

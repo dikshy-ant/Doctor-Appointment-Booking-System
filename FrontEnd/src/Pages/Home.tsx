@@ -13,30 +13,28 @@ import Footer from "../Components/Footer";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">
-        <Navbar />
-        <Hero /> {/** header and hero section */}
+    <div className="flex flex-col min-h-screen ">
+      <Hero /> {/** header and hero section */}
+      <div className="w-full">
         <Searchbar />
-        <div className="flex justify-center flex-wrap gap-4 p-5 mt-2 w-full">
-          {" "}
-          {/** cards section */}
-          {cardsData.map((card, index) => (
-            <Cards
-              key={index}
-              image={card.image}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
-        </div>
-        <TopDoctors />
-        <Message />
-        <LatestNews />
-        <StatsCounter />
-        <Testimonials />
-      </main>
-      <Footer />
+      </div>
+      <div className="flex justify-center flex-wrap gap-4 p-5 mt-2 w-full">
+        {" "}
+        {/** cards section */}
+        {cardsData.map((card, index) => (
+          <Cards
+            key={index}
+            image={card.image}
+            title={card.title}
+            description={card.description}
+          />
+        ))}
+      </div>
+      <TopDoctors />
+      <Message />
+      <LatestNews />
+      <StatsCounter />
+      <Testimonials />
     </div>
   );
 };
