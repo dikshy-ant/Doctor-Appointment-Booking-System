@@ -29,8 +29,12 @@ const Booking = () => {
             <p className="text-[var(--text-primary)] font-semibold text-lg">
               Safal Adhikari
             </p>
-            <p className="text-[var(--text-primary)] font-semibold text-lg">Address:</p>
-            <p className="text-sm text-[var(--text-muted)]">17th Kings Cross Road</p>
+            <p className="text-[var(--text-primary)] font-semibold text-lg">
+              Address:
+            </p>
+            <p className="text-sm text-[var(--text-muted)]">
+              17th Kings Cross Road
+            </p>
 
             <p className="text-neutral-700 font-medium text-base">
               Gynecologist
