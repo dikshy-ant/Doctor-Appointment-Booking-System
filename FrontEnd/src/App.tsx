@@ -8,6 +8,8 @@ import Login from "./Pages/Login";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Register from "./Pages/Register";
+import ScrollToTop from "./Components/ScrolltotheTop";
+import UserProfile from "./Pages/UserProfile";
 
 const App: React.FC = () => {
   return (
@@ -15,13 +17,15 @@ const App: React.FC = () => {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow mt-16 md:mt-20">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/doctors" element={<Doctors />} />
-            <Route path="/doctorDetail" element={<DocAppointment />} />
+            <Route path="/doctors/:id" element={<DocAppointment />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/userProfile" element={<UserProfile />} />
           </Routes>
         </main>
         <Footer />

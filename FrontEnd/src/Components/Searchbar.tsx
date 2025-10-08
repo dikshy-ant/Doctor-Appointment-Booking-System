@@ -1,17 +1,36 @@
 import React from "react";
 
-const Searchbar = () => {
+type SearchbarProps = {
+  value: string;
+  onChange: (val: string) => void;
+};
+
+const Searchbar: React.FC<SearchbarProps> = ({ value, onChange }) => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className="flex items-center justify-center max-w-[65%] mx-auto h-16 m-8 relative z-10">
-      <input
-        type="text"
-        placeholder="Search for Doctors....(Gynecologist, Dermatologist, Dentist, General Physician) "
-        className="w-full h-full px-4 py-3 rounded-l-2xl border border-gray-300 bg-white  "
-      />
-      <button className="bg-[var(--button-bg)] text-white font-bold py-4 px-12 rounded-r-2xl h-full">
-        <i className="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </form>
+    <div className="w-full flex justify-center  py-6">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center justify-between w-full max-w-[1200px] px-4"
+      >
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="Search for Doctors... (Gynecologist, Dermatologist, Dentist, General Physician)"
+          className="flex-1 h-14 px-4 rounded-l-2xl border border-gray-300 bg-white text-gray-700 focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="bg-[var(--button-bg)] text-white font-bold h-14 px-8 rounded-r-2xl flex items-center justify-center"
+        >
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
   );
 };
 

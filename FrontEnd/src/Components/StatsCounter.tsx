@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from "react-countup";
 
 const StatsCounter = () => {
   return (
@@ -17,31 +18,39 @@ const StatsCounter = () => {
         {/* Stats */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-white text-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-bold">95%</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold">
+              <CountUp end={95} duration={2} suffix="%" enableScrollSpy />
+            </h1>
             <p className="mt-2 text-base sm:text-lg">
               Prescription accuracy rate
             </p>
           </div>
 
           <div>
-            <h1 className="text-4xl sm:text-5xl font-bold">10k+</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold">
+              {" "}
+              <CountUp end={100} duration={2} suffix="+" enableScrollSpy />
+            </h1>
             <p className="mt-2 text-base sm:text-lg">
               Prescriptions filled monthly
             </p>
           </div>
 
           <div>
-            <h1 className="text-4xl sm:text-5xl font-bold">500+</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold">
+              {" "}
+              <CountUp end={500} duration={2} suffix="+" enableScrollSpy />
+            </h1>
             <p className="mt-2 text-base sm:text-lg">
               Trusted partner pharmacies
             </p>
           </div>
 
           <div>
-            <h1 className="text-4xl sm:text-5xl font-bold">24/7</h1>
-            <p className="mt-2 text-base sm:text-lg">
-              Customer support available
-            </p>
+            <h1 className="text-4xl sm:text-5xl font-bold">
+              <CountUp end={1000} duration={2} enableScrollSpy />+
+            </h1>
+            <p className="mt-2 text-base sm:text-lg">Happy customers served</p>
           </div>
         </div>
       </div>

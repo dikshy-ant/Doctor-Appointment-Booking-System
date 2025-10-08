@@ -2,7 +2,7 @@ import React from "react";
 
 const ReviewSection = () => {
   return (
-    <div>
+    <div className="">
       {/* Review Card 1 */}
       <div className="bg-white rounded-2xl p-6 shadow-lg flex flex-col items-center text-center gap-4 w-72">
         <div className="w-20 h-20 bg-gray-200 rounded-full"></div>

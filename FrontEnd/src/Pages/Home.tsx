@@ -18,8 +18,7 @@ const Home: React.FC = () => {
       <div className="w-full">
         <Searchbar />
       </div>
-      <div className="flex justify-center flex-wrap gap-4 p-5 mt-2 w-full">
-        {" "}
+      <div className="flex justify-center flex-wrap gap-2 sm:gap-3 md:gap-4 p-2 sm:p-3 md:p-4 lg:p-5 mt-1 sm:mt-2 w-full">
         {/** cards section */}
         {cardsData.map((card, index) => (
           <Cards
